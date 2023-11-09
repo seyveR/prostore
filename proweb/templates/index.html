@@ -6,33 +6,873 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>PROSTORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,800;1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,800;1,500&family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="{% static 'images/prostor_icon.ico' %}" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+
+    <title>Простор</title>
 </head>
 
 <body>
-    <header>
-        <div>
+
+<div class="header">
+    <div class="container">
+        <div class="header-line">
+            <div class="header-logo">
+                <img src="{% static 'images/logoclear.png' %}" alt="" width="200" height="200">
+            </div>
+
+
+            <div class="nav">
+                <a class="nav-item" href="#our-works">Наши работы</a>
+                <a class="nav-item" href="#about-us">О нас</a>
+                <a class="nav-item" href="#our-reviews">Отзывы</a>
+                <a class="nav-item" href="#contacts">Контакты</a>
+            </div>
+
+            <div class="phone">
+                <div class="phone-holder">
+                    <div class="phone-img">
+                        <img src="{% static 'images/phone.png' %}" alt="">
+                    </div>
+                    <div class="number"><a class="num" href="#">+7 911 877-77-99</a>
+                    </div>
+                </div>
+                <div class="phone-text">
+                    Рассчитаем стоимость вашего ремонта бесплатно
+                </div>
+            </div>
+
+            <div class="btn">
+                <a class="button" href="https://vk.com/npoctop29">
+                    <img src="{% static 'images/vkblack.svg' %}" alt="Мы в Вконтакте" width="65" height="65">
+                </a>
+            </div>
+
+            <div class="menu">
+                <a href="">
+                    <img src="{% static 'images/Group.png' %}" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="header-down">
+            <div class="header-title">
+                Комплексный ремонт квартир в
+
+                <div class="header-subtitle">
+                    Архангельске и Северодвинске<br>
+                </div>
+
+                <div class="header-suptitle">
+                    Простор
+                </div>
+
+                <div class="phone-number" id="phone-number">
+                    <p><a href="tel:+79118777799">+7 (911) 877-77-99 </a></p>
+                </div>
+            </div>
 
         </div>
-        <ul>
-            <li>
-                <a href="">Работы</a>
-            </li>
-            <li>
-                <a href="">Отзывы</a>
-            </li>
-            <li>
-                <a href="">Офис</a>
-            </li>
-            <li>
-                <a href="">Контакты</a>
-            </li>        
-        </ul>
-    </header>
-    <footer>
+    </div>
+</div> 
 
-    </footer>
+<div class="cards">
+    <div class="container">
+        <div class="cards-holder" >
+            <div class="card" id="advantages">
+                <div class="card-image">
+                    <img class="card-img" src="{% static 'images/hammer.svg'%}" width="65" height="65">
+                </div>
+
+                <div class="card-title">
+                    Подбор материалов
+                </div>
+
+                <div class="card-desc">
+                    Подберем качественные материалы из нашего магазина 
+                    для получение долговечного и функционального 
+                    результата работы.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img class="card-img" src="{% static 'images/design.svg'%}" width="65" height="65">
+                </div>
+
+                <div class="card-title">
+                    3D дизайн проект
+                </div>
+
+                <div class="card-desc">
+                    Создадим неповторимый стиль вашего интерьера, 
+                    с учетом всех Ваших пожеланий и предпочтений.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img class="card-img" src="{% static 'images/docs.svg'%}" width="65" height="65">
+                </div>
+
+                <div class="card-title">
+                    Договор и гарантия
+                </div>
+
+                <div class="card-desc">
+                    Предоставляем гарантию, 
+                    прописанную в договоре.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="about-us" id="about-us">
+    <hr>
+        <div class="info-holder" >
+            <div class="info" id="info">
+                <div class="info-text">
+                    <div class="info-title">
+                        О НАС
+                    </div>
+
+                    <div class="info-desc">
+                        Комплексный ремонт квартир<br>
+                        в Северодвинске и Архангельске
+                    </div>
+                    
+                    <div class="info-desc-ul">
+                        <ul>
+                            <li>6 лет на рынке</li>
+                            <li>Более 500 успешных работ</li>
+                            <li>Участие в благотворительных акциях</li>
+                            <li>Реальные отзывы</li>
+                            <li>Рассчет стоимости ремонта</li>
+                            <li>Гарантия по договору 1 год</li>
+                            <li>Рассрочка на 2 года</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-desc2">
+                        Магазин отделочных материалов<br>
+                        в Северодвинске
+                    </div>
+
+                    <div class="info-desc-ul2">
+                        <ul>
+                            <li>Сантехника</li>
+                            <li>Плитка</li>
+                            <li>Кварцвенилл и ламинат</li>
+                            <li>Плинтуса</li>
+                            <li>Обои</li>
+                            <li>Мебель на заказ</li>
+                            <li>Освещение</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="info-image">
+                    <img class="info-img" src="{% static 'images/duologowhite.png'%}">
+                </div>
+                
+            </div>
+        </div>
+    <hr>
+</div>
+
+
+<!-- Модальное окно(всплывашка) -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+            <img id="modal-image" src="{% static 'images/info/info1.jpg'%}" alt="Image">
+        
+        <p id="modal-text"><strong>Основные виды работ по ремонту ванной под ключ:</strong><br>
+            демонтаж сантехкабины (шиферной или гипсовой) или слом кривых стен 
+            (в кирпичном доме); кладка стен, перегородок из влагостойких пеноблоков; 
+            сантехнические работы: монтаж металлопластиковых и труб канализации 
+            (убрать в стену), с заменой стояковых труб водоснабжения на газосварке; 
+            оштукатуривание или грунтовка стен в ванной комнате и туалете; 
+            цементная стяжка (выравнивание) пола в санузле;<br> 
+            <strong>Плиточные работы:</strong><br>
+            укладка плитки на стены ванной (туалета) с затиркой плиточных швов, 
+            укладка напольной плитки в ванной комнате(туалете);<br> 
+            <strong>Установка сантехники включает:</strong><br> 
+            установка ванны (с 3-ой защитой от воды), мойдодыра для ванны, 
+            полотенцесушителя, смесителя, унитаза и других сантехприборов; 
+            монтаж подвесного реечного и натяжного потолков со встроенными светильниками; 
+            электромонтажные работы с заменой электропроводки и установкой новых выключателей 
+            и розеток; установка двери для ванной с доборами (или стелодвери); 
+            экран под ванну из плитки, с вырезом для ног, со съёмной панелью из плитки; 
+            монтаж тёплого пола, водонагревателя; гигиенический душ (по желанию заказчика).</p>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+        <img id="modal-image" src="{% static 'images/info/info2.jpg'%}" alt="Image">
+        <p id="modal-text">Приоритетом в области ремонтных работ 
+            у нас считается комплексный ремонт и отделка квартир <strong>«под ключ»</strong>. 
+            Помимо этого производим стандартные евроремонты, выполняем сложную отделку, 
+            заданную дизайнерскими решениями.<br><br>
+            <strong>Основные виды работ по ремонту квартир под ключ:</strong><br>
+            Смета; демонтажные работы; снос стен, перегородок и т.д.; 
+            возведение новых стен, устройство проёмов; подготовка, 
+            выравнивание потолков, стен, полов; стяжка; ремонт ванной под ключ; 
+            укладка кафельной плитки и т.д.; укладка линолеума, ламината, паркета, 
+            оклейка-окраска стен, потолков; установка окон и дверей; монтаж электрики; 
+            монтаж сантехники; замена батарей; установка ванной, туалета и т.д.; 
+            закупка, доставка, подъём и занос стройматериалов; вывоз мусора.</p>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+        <img id="modal-image" src="{% static 'images/info/info3.jpg'%}" alt="Image">
+        <p id="modal-text"><strong>Коммерческие помещения, которые мы ремонтируем, 
+            включают в себя:</strong><br>
+            <strong>Офисы:</strong><br>
+            Это могут быть как обычные офисы, так и специализированные офисы, 
+            такие как серверные помещения или помещения для внутренней отделки.<br>
+            <strong>Магазины:</strong><br> 
+            Ремонт магазинов включает в себя работу над витринами, 
+            внутренним убранством, системой отопления, освещения и другие работы.<br>
+            <strong>Промышленные помещения:</strong><br> Это могут быть цеха, склады, 
+            производственные помещения и другие промышленные объекты.<br>
+            <strong>Медицинские учреждения:</strong><br> Это могут быть аптеки, 
+            стоматологические клиники, медицинские центры и другие медицинские учреждения.<br>
+            <strong>Общественные помещения:</strong><br> Это могут быть рестораны, кафе, бары, 
+            конференц-залы, спортивные и развлекательные центры и другие общественные помещения.<br>
+            <strong>Фитнес-клубы:</strong><br> 
+            Это могут быть помещения для проведения фитнес-тренировок, саун, 
+            бассейнов и других спортивных залов.<br>
+            <strong>Библиотеки и учебные центры:</strong><br> 
+            Это могут быть помещения, предназначенные для хранения и изучения информации.</p>
+    </div>
+ </div>
+
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+        <img id="modal-image" src="{% static 'images/info/info4.jpg'%}" alt="Image">
+        <p id="modal-text"><strong>Качественно и в короткие сроки выполним сантехнические 
+            работы на высоком профессиональном уровне, такие как:</strong><br>
+            Установка и подключение стиральных машин; 
+            замена стояков центрального водоснабжения; 
+            замена радиаторов отопления; монтаж труб; 
+            сантехнические работы по замене стояков канализации; 
+            выполним скрытою разводку труб водоснабжения и канализации 
+            с последующей установкой сантехнического оборудования; 
+            монтаж тёплых полов (электрические и водяные).</p>
+    </div>
+</div>
+
+<div id="modal5" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+        <img id="modal-image" src="{% static 'images/info/info5.jpg'%}" alt="Image">
+        <p id="modal-text"><strong>Малярно штукатурные работы очень многочисленны. 
+            Наиболее трудоемкими и ответственными из них являются:</strong><br>
+            Оштукатуривание арочных проемов, поверхности стен, потолков по маякам; 
+            обшивка стен, перегородок гипсокартоном; утепление, шумовая изоляция стен, 
+            потолков; декоративная штукатурка и окраска по ней; 
+            устройство границ одно, двухуровневых (прямолинейных, непрямолинейных) 
+            и монтаж подвесных потолков; шпатлёвка под покраску, окрашивание, 
+            поверхностей стен и потолков, наклеивание на них обоев; 
+            окрашивание окон, дверей, откосов, подоконников, 
+            с частичным ошкуриванием и шпаклевкой; другие.</p>
+    </div>
+ </div>
+
+<div id="modal6" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+        <img id="modal-image" src="{% static 'images/info/info6.jpg'%}" alt="Image">
+        <p id="modal-text"><strong>Основные виды работ:</strong><br> 
+            установка межкомнатных дверей (одинарных, двойных) или их замена 
+            (монтаж коробки, навеска петель, врезка замка, обивка наличниками); 
+            изготовление опалубки, порожков дверей; монтаж корпусных арок, 
+            перегородок из гипсокартона, создание оснований для размещения цветов в доме;
+             укладка паркетной доски, ее частичная замена; 
+             установка подоконников, карнизов штор, перегородок над дверьми; 
+             изготовление, монтаж деревянных обрешеток на стены, потолки; 
+             установка экранов отопительных перегородок, аналогичных элементов для ванны 
+             и т.д.; обшивка стен, потолков деревянной, пластиковой вагонкой, 
+             отделка завершающими декоративными элементами последних штрихов 
+             отделочных работ.<br>
+            <strong>Любой вид</strong> вышеперечисленных работ наши специалисты выполняют быстро 
+            и качественно, всегда укладываясь в сроки и оставляя после себя 
+            только приятные впечатления. На все наши услуги распространяется гарантия, 
+            срок которой зависит от вида заказанных Вами работ.</p>
+    </div>
+</div>
+
+<div id="modal7" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+        <img id="modal-image" src="{% static 'images/info/info7.jpg'%}" alt="Image">
+        <p id="modal-text"><strong>Качественно и в короткие сроки выполним электромонтажные 
+            работы на высоком профессиональном уровне, такие как:</strong><br>
+            демонтаж существующей проводки (требует базовых знаний и технической документации);<br>
+            монтаж электропроводки (установка внутренней (скрытый, комбинированный и открытый) 
+            и внешней проводки);<br> монтаж и установка розеток и выключателей 
+            (осуществляется в соответствии с разработанным проектом);<br> 
+            монтаж и сборка распределительных щитов 
+            (предполагает наличие необходимого оборудования и инструментов);<br> 
+            подключение электроприборов (с соблюдением правил и дополнительных условий 
+            подключения мало мощных, среднемощных, высокомощных приборов);<br> 
+            услуги по телефонизации, 
+            компьютеризации и установке различных систем телевидения.</p>
+    </div>
+ </div>
+
+<div id="modal8" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+        <img id="modal-image" src="{% static 'images/info/info8.jpg'%}" alt="Image">
+        <p id="modal-text">Натяжные потолки - это <strong>быстрый</strong> заказ, 
+            <strong>своевременная</strong> доставка и <strong>качественная</strong> установка, 
+            а так же отличное качество материалов по самым доступным ценам.<br>
+            <strong>Мы предлагаем Вам:</strong><br>
+            Бесплатный замер и консультацию ( с материалами );<br>
+            Монтаж потолков в самые кратчайшие сроки 
+            ( монтаж потолков в течении 7 дней с момента подписания договора );<br>
+            Широкий ассортимент фактур и цветовой палитры;<br>
+            Многообразие технических решений, 
+            от простых потолков до сложных дизайн проектов.</p>
+    </div>
+</div>
+
+<div id="modal9" class="modal">
+    <div class="modal-content">
+        <button class="close">×</button>
+        <img id="modal-image" src="{% static 'images/info/info9.jpg'%}" alt="Image">
+        <p id="modal-text"><strong>Дизайн квартиры предполагает несколько этапов:</strong><br>
+            Обмерный план;<br> 
+            план демонтажа стен;<br>
+            монтажный план перегородок (2-3 варианта перепланировки);<br> 
+            план расстановки оборудования и мебели;<br>
+            колористическое решение дизайна;<br> 
+            спецификация кухонного и сантехнического оборудования, схема привязки;<br> 
+            спецификация по дверям;<br> 
+            план полов (с указанием покрытий);<br> 
+            монтажный план полов;<br> план вентиляции;<br> 
+            план потолка (с указанием покрытий), необходимые разрезы и узлы;<br> 
+            монтажный план потолка;<br> план освещения;<br> монтажный план освещения;<br> 
+            план распределения освещения на выключатели;<br> план привязки выключателей;<br> 
+            план электрики;<br> план привязки электрики;<br> раскладка плитки;<br> 
+            схема покраски стен;<br> 
+            необходимые развертки поверхностей стен, узлы, разрезы;<br> визуализация помещений.<br>
+            <br>Стоимость дизайн проекта зависит от площади и сложности проекта объекта.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var modalTriggers = document.querySelectorAll(".modal-trigger");
+    var closeBtns = document.querySelectorAll(".close");
+
+    modalTriggers.forEach(function (trigger) {
+       trigger.addEventListener("click", function (event) {
+           event.preventDefault();
+           var modalId = trigger.getAttribute("data-modal");
+           var modal = document.getElementById(modalId);
+           modal.style.display = "block";
+        });
+    });
+
+    closeBtns.forEach(function (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+            var modal = closeBtn.closest(".modal");
+            modal.style.display = "none";
+        });
+    });
+    });
+
+</script>
+<!-- Модальное окно(всплывашка) -->
+
+<div class="types">
+    <div class="container">
+        <div class="types-holder" >
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    РЕМОНТ ВАННЫХ КОМНАТ<br>«ПОД КЛЮЧ»
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/bath.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal1">Что входит в услугу?</a>
+                </div>
+            </div>
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    РЕМОНТ КВАРТИР<br>«ПОД КЛЮЧ»
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/house.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal2">Что входит в услугу?</a>
+                </div>
+            </div>
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    РЕМОНТ ПОМЕЩЕНИЙ<br>«ПОД КЛЮЧ»
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/room.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal3">Что входит в услугу?</a>
+                </div>
+            </div>
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    САНТЕХНИЧЕСКИЕ РАБОТЫ
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/plumber.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal4">Что входит в услугу?</a>
+                </div>
+            </div>
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    МАЛЯРНЫЕ РАБОТЫ
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/paintroller.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal5">Что входит в услугу?</a>
+                </div>
+            </div>
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    ПЛОТНИЦКИЕ РАБОТЫ
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/carpentry.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal6">Что входит в услугу?</a>
+                </div>
+            </div>
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    ЭЛЕКТРОМОНТАЖНЫЕ РАБОТЫ
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/electric.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal7">Что входит в услугу?</a>
+                </div>
+            </div>
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    МОНТАЖ ЛЮБЫХ ПОТОЛКОВ
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/ceil.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal8">Что входит в услугу?</a>
+                </div>
+            </div>
+
+            <div class="type" id="types">
+                <div class="type-title">
+                    УСЛУГИ 3D ДИЗАЙНА ПРОЕКТА
+                </div>
+
+                <div class="type-image">
+                    <img class="type-img" src="{% static 'images/cube.svg'%}">
+                </div>
+
+                <div class="type-desc">
+                    <a href="#" class="modal-trigger" data-modal="modal9">Что входит в услугу?</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="works" id="our-works">
+    <hr>
+    <h1>Наши работы</h1>
+    <div class="work-slider">
+        <div class="work-images">
+            <img src="{% static 'images/works/work1.jpg' %}" alt="Work 1">
+            <img src="{% static 'images/works/work2.jpg' %}" alt="Work 2">
+            <img src="{% static 'images/works/work3.jpg' %}" alt="Work 3">
+            <img src="{% static 'images/works/work4.jpg' %}" alt="Work 4">
+            <img src="{% static 'images/works/work5.jpg' %}" alt="Work 5">
+            <img src="{% static 'images/works/work6.jpg' %}" alt="Work 6">
+            <img src="{% static 'images/works/work7.jpg' %}" alt="Work 7">
+            <img src="{% static 'images/works/work8.jpg' %}" alt="Work 8">
+            <img src="{% static 'images/works/work9.jpg' %}" alt="Work 9">
+            <img src="{% static 'images/works/work10.jpg' %}" alt="Work 10">
+            <img src="{% static 'images/works/work11.jpg' %}" alt="Work 11">
+            <img src="{% static 'images/works/work12.jpg' %}" alt="Work 12">
+            <img src="{% static 'images/works/work13.jpg' %}" alt="Work 13">
+            <img src="{% static 'images/works/work14.jpg' %}" alt="Work 14">
+            <img src="{% static 'images/works/work15.jpg' %}" alt="Work 15">
+        
+        </div>
+        <div class="work-controls">
+            <button id="prev-work">Предыдущая</button>
+            <button id="next-work">Следующая</button>
+        </div>
+        <div class="work-indicator">
+            <!-- Здесь будут индикаторы текущей фотографии -->
+        </div>
+    </div>
+
+    <div class="video-slider">
+        <video class="video-hello" src="{% static 'images/works/video.mp4' %}" poster="{% static 'images/works/video-poster.jpg' %}" controls width="1100" height="800"></video>
+        <video class="video-hello" src="{% static 'images/works/video2.mp4' %}" poster="{% static 'images/works/poster2.png' %}" controls width="1100" height="800"></video>
+        <video class="video-hello" src="{% static 'images/works/video3.mp4' %}" poster="{% static 'images/works/poster3.png' %}" controls width="1100" height="800"></video>
+    </div>
+    <div class="video-btn">
+        <button id="prevBtn">Предыдущее видео</button>
+        <button id="nextBtn">Следующее видео</button>
+    </div>
+    <div class="video-indicator">
+        <!-- Здесь будут индикаторы текущего видео -->
+    </div>
+      
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.work-images img');
+        const prevButton = document.getElementById('prev-work');
+        const nextButton = document.getElementById('next-work');
+        const indicator = document.querySelector('.work-indicator');
+
+        let currentIndex = 0;
+        const hammer = new Hammer(document.querySelector('.work-images'));
+
+        hammer.on('swipeleft', function() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex, 'slide-in-left');
+        });
+
+        hammer.on('swiperight', function() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex, 'slide-in-right');
+        });
+
+        function showImage(index, animationClass) {
+            images.forEach((image, i) => {
+                if (i === index) {
+                    image.classList.add(animationClass);
+                    image.style.display = 'block';
+                } else {
+                    image.classList.remove(animationClass);
+                    image.style.display = 'none';
+                }
+            });
+            updateIndicator(index);
+        }
+
+        function updateIndicator(index) {
+            indicator.innerHTML = '';
+            for (let i = 0; i < images.length; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => showImage(i, 'slide-in-left'));
+                indicator.appendChild(dot);
+            }
+            indicator.childNodes[index].classList.add('active');
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex, 'slide-in-right');
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex, 'slide-in-left');
+        });
+
+        showImage(currentIndex);
+    });
+</script>
+
+<script>
+    const videos = document.querySelectorAll(".video-hello");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const indicator = document.querySelector('.video-indicator');
+    let currentVideoIndex = 0;
+
+    function showVideo(index) {
+    videos.forEach((video, i) => {
+        if (i === index) {
+            video.removeAttribute('hidden');
+        } else {
+            video.setAttribute('hidden', 'true');
+        }
+    });
+    updateIndicatorVideo(index);
+    }
+
+    function updateIndicatorVideo(index) {
+        indicator.innerHTML = '';
+        for (let i = 0; i < videos.length; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            dot.addEventListener('click', () => showVideo(i));
+            indicator.appendChild(dot);
+        }
+        indicator.childNodes[index].classList.add('active');
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+      showVideo(currentVideoIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+      showVideo(currentVideoIndex);
+    });
+
+    showVideo(currentVideoIndex); // Show the first video on page load
+</script>
+
+
+<div class="scheme">
+    <h1>Схема работы с нами</h1>
+    <div class="scheme-image">
+        <img src="{% static 'images/skhema.png' %}" alt="Scheme">
+    </div>
+</div>
+<div class="reviews" id="our-reviews">
+    <h1>Отзывы</h1>
+    <div class="review-slider">
+        <div class="review-images">
+            <img src="{% static 'images/reviews/review1.png' %}" alt="Review 1">
+            <img src="{% static 'images/reviews/review2.png' %}" alt="Review 2">
+            <img src="{% static 'images/reviews/review3.png' %}" alt="Review 3">
+            <img src="{% static 'images/reviews/review4.png' %}" alt="Review 4">
+            <img src="{% static 'images/reviews/review5.png' %}" alt="Review 5">
+            <img src="{% static 'images/reviews/review6.png' %}" alt="Review 6">
+            <img src="{% static 'images/reviews/review7.png' %}" alt="Review 7">
+            <img src="{% static 'images/reviews/review8.png' %}" alt="Review 8">
+            <img src="{% static 'images/reviews/review9.png' %}" alt="Review 9">
+            <img src="{% static 'images/reviews/review10.png' %}" alt="Review 10">
+            <img src="{% static 'images/reviews/review11.png' %}" alt="Review 11">
+    
+        </div>
+        <div class="review-controls">
+            <button id="prev-review">Предыдущий</button>
+            <button id="next-review">Следующий</button>
+        </div>
+        <div class="review-indicator">
+            <!-- Здесь будут индикаторы текущей фотографии отзыва -->
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.review-images img');
+    const prevButton = document.getElementById('prev-review');
+    const nextButton = document.getElementById('next-review');
+    const indicator = document.querySelector('.review-indicator');
+
+    let currentIndex = 0;
+    const hammer = new Hammer(document.querySelector('.review-images'));
+
+    hammer.on('swipeleft', function() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex, 'slide-in-left');
+    });
+
+    hammer.on('swiperight', function() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex, 'slide-in-right');
+    });
+
+    function showImage(index, animationClass) {
+        images.forEach((image, i) => {
+            if (i === index) {
+                image.classList.add(animationClass);
+                image.style.display = 'block';
+            } else {
+                image.classList.remove(animationClass);
+                image.style.display = 'none';
+            }
+        });
+        updateIndicator(index);
+    }
+
+    function updateIndicator(index) {
+        indicator.innerHTML = '';
+        for (let i = 0; i < images.length; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            dot.addEventListener('click', () => showImage(i, 'slide-in-left'));
+            indicator.appendChild(dot);
+        }
+        indicator.childNodes[index].classList.add('active');
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex, 'slide-in-right');
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex, 'slide-in-left');
+    });
+
+    showImage(currentIndex);
+    });
+
+
+</script>
+
+<div class="map">
+    <hr>
+    <h1>Наш офис</h1>
+    <div id="map"></div>
+</div>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    ymaps.ready(init);
+
+    function init() {
+        var myMap = new ymaps.Map('map', {
+            center: [64.54135, 39.82492], 
+            zoom: 17 
+        });
+
+        //стрелка
+        var polyline = new ymaps.Polyline([
+            [64.541557, 39.824554], 
+            [64.541536, 39.824457] 
+        ], {
+            hintContent: 'Вход' // Подсказка при наведении
+        }, {
+            strokeColor: '#FF0000', 
+            strokeWidth: 3, 
+            arrowLength: 18, 
+            arrowWidth: 8, 
+            arrowDirection: 'end'
+        });
+
+
+        myMap.geoObjects.add(polyline);
+
+        var myPlacemark = new ymaps.Placemark([64.541445, 39.824485], {
+            hintContent: 'Простор',
+            balloonContent: '<strong>Офис нашей компании</strong><br>' +
+                   'График работы:<br>' +
+                   'пн-пт: 10:00-19:00<br>' +
+                   'сб-вс: 15:00-19:00<br>' +
+                   'Адрес: Проспект Победы 4, г. Северодвинск'
+        }, {
+            iconLayout: 'default#image', 
+            iconImageHref: "{% static 'images/office.svg' %}", 
+            iconImageSize: [30, 30] 
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+});
+
+</script>
+<div class="offer-form">
+    <hr>
+    <h2><span>Оставьте заявку и мы свяжемся с вами</span></h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Номер телефона:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Отправить</button>
+        <div class="empty">"</div>
+    </form>
+    <hr>
+</div>
+
+<div id="success-modal" class="modal-success">
+    <div class="modal-success-content">
+        <button class="close">×</button>
+        <p>Обращение зарегистрировано!</p>
+    </div>
+</div>
+
+
+<div class="contacts" id="contacts">
+    <h1>Наши контакты</h1>
+    <p><a href="https://vk.com/npoctop29">Группа Вконтакте</a></p>
+    <p><a href="https://vk.com/prostordecor">Магазин материалов</a></p>
+    <p>Номер телефона:<a href="tel:+79118777799"> +7 (911) 877-77-99 </a>- Роман</p>
+</div>
+
 </body>
 </html>
-
-
